@@ -45,6 +45,7 @@ class NoticesController extends Controller
             'dataProvider' => $dataProvider,
         ]);
     }
+    
 
     /**
      * Displays a single Notices model.
