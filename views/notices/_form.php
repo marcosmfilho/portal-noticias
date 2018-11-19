@@ -10,26 +10,16 @@ use yii\widgets\ActiveForm;
 
 <div class="notices-form">
 
-    <?php $form = ActiveForm::begin(); ?>
+    <?php $form = ActiveForm::begin(['id' => 'notice_form']); ?>
 
     <?= $form->field($model, 'author')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'body')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'image')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'date_created')->textInput() ?>
-
-    <?= $form->field($model, 'date_updated')->textInput() ?>
-
-    <?= $form->field($model, 'notices_status_id')->textInput() ?>
-
-    <div class="form-group">
-        <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
-    </div>
-
+    <?= $form->field($model, 'body')->textArea(['maxlength' => true]) ?>
+    
+    
     <?php ActiveForm::end(); ?>
 
 </div>
+

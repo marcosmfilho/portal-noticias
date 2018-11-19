@@ -37,7 +37,8 @@ class Notices extends \yii\db\ActiveRecord
             [['author', 'title', 'body', 'notices_status_id'], 'required'],
             [['date_created', 'date_updated'], 'safe'],
             [['notices_status_id'], 'integer'],
-            [['author', 'title'], 'string', 'max' => 45],
+            [['author'], 'string', 'max' => 45],
+            [['title'], 'string', 'max' => 200],
             [['body'], 'string', 'max' => 2000],
             [['image'], 'string', 'max' => 200],
             [['notices_status_id'], 'exist', 'skipOnError' => true, 'targetClass' => NoticesStatus::className(), 'targetAttribute' => ['notices_status_id' => 'id']],
@@ -51,9 +52,9 @@ class Notices extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'author' => 'Author',
-            'title' => 'Title',
-            'body' => 'Body',
+            'author' => 'Autor',
+            'title' => 'Título da Notícia',
+            'body' => 'Corpo da Notícia',
             'image' => 'Image',
             'date_created' => 'Date Created',
             'date_updated' => 'Date Updated',

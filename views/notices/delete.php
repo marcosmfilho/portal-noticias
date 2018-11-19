@@ -2,14 +2,13 @@
 
 use yii\helpers\Html;
 
-
 /* @var $this yii\web\View */
 /* @var $model app\models\Notices */
 ?>
 
-<div class="notices-create">
+<div class="notices-delete">
 
-    <?= $this->render('_form', [
+    <?= $this->render('_form_delete', [
         'model' => $model,
     ]) ?>
 

@@ -17,6 +17,7 @@ class NoticesController extends Controller
     /**
      * {@inheritdoc}
      */
+
     public function behaviors()
     {
         return [
@@ -36,7 +37,8 @@ class NoticesController extends Controller
     public function actionIndex()
     {
         $dataProvider = new ActiveDataProvider([
-            'query' => Notices::find(),
+            'query' => Notices::find()->where(['notices_status_id' => 1]),
+            'pagination' => [ 'pageSize' => 10 ],
         ]);
 
         return $this->render('index', [
@@ -63,14 +65,20 @@ class NoticesController extends Controller
      * @return mixed
      */
     public function actionCreate()
-    {
+    {   
+
         $model = new Notices();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+        if ($model->load(Yii::$app->request->post())) {
+            $model->notices_status_id = 1;
+            $model->date_created = date('Y-m-d H:i:s');
+
+            if($model->save()){
+                return $this->redirect(['view', 'id' => $model->id]);
+            }
         }
 
-        return $this->render('create', [
+        return $this->renderAjax('create', [
             'model' => $model,
         ]);
     }
@@ -86,11 +94,32 @@ class NoticesController extends Controller
     {
         $model = $this->findModel($id);
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+        if ($model->load(Yii::$app->request->post())) {
+            
+            $model->date_updated = date('Y-m-d H:i:s');
+            
+            if($model->update()){
+                return $this->redirect(['view', 'id' => $model->id]);
+            }
         }
 
-        return $this->render('update', [
+        return $this->renderAjax('update', [
+            'model' => $model,
+        ]);
+    }
+
+    /**
+     * Deletes an existing Notices model.
+     * If deletion is successful, the browser will be redirected to the 'index' page.
+     * @param integer $id
+     * @return mixed
+     * @throws NotFoundHttpException if the model cannot be found
+     */
+    public function actionDeleteIndex($id)
+    {
+        $model = $this->findModel($id);
+
+        return $this->renderAjax('delete', [
             'model' => $model,
         ]);
     }
@@ -104,7 +133,16 @@ class NoticesController extends Controller
      */
     public function actionDelete($id)
     {
-        $this->findModel($id)->delete();
+        $model = $this->findModel($id);
+
+        if (isset($model)) {
+            
+            $model->notices_status_id = 2;
+            
+            if($model->update()){
+                return $this->redirect(['index']);
+            }
+        }
 
         return $this->redirect(['index']);
     }
