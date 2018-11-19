@@ -54,6 +54,16 @@ $config = [
                 ['class' => 'yii\rest\UrlRule', 'controller' => 'notice-api']
             ],
         ],
+'assetManager' => [
+    'bundles' => [
+        'yii\bootstrap\BootstrapPluginAsset' => [
+            'js'=>[]
+        ],
+        'yii\web\JqueryAsset' => [
+            'js'=>[]
+        ],
+    ],
+],
     ],
     'params' => $params,
 ];

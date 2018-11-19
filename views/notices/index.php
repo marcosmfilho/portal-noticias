@@ -7,10 +7,10 @@ use yii\grid\GridView;
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
 $this->title = 'Notícias';
-//$this->params['breadcrumbs'][] = $this->title;
 ?>
 
 <script src="/js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
 <div class="notices-index">
 
