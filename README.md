@@ -82,10 +82,10 @@ Body (application/json)
 
 **COMO RODAR LOCALMENTE? É bem simples!**
 1. Requisitos: PHP7, MySQL, Composer
-2. Crie seu banco de dados! Na pasta config tem o arquivo *schema.sql*, copie, cole no seu MySQLWorkbench e pronto seu banco ta criado.
+2. Crie seu banco de dados! Na pasta config tem o arquivo *schema.sql*, copie, cole no seu MySQLWorkbench, execute e pronto seu banco ta criado.
 3. Dentro da aplicação execute o comando *composer install* para que as dependências possam ser instaladas.
 4. Depois, dentro da pasta da aplicação execute o comando *php yii serve --port=8888*, seu servidor estará rodando!
-5. Basta acessar http://localhost:8888 e sua aplicação estará rodando!
+5. Basta acessar http://localhost:8888 e verá sua aplicação rodando!
 
 **O que foi utilizado nessa aplicação?**
 1. Framework Yii2 PHP (PHP OO)
