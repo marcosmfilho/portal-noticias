@@ -1,6 +1,6 @@
 # portal-noticias
 
-Um simples App de Teste que implementa um portal de Notócias!
+Um simples App de Teste que implementa um portal de Notícias!
 
 **IMPORTANTE**
 
