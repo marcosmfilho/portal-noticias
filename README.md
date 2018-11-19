@@ -12,6 +12,7 @@ Esse APP contempla tanto a parte WEB (LISTAR, CRIAR, VISUALIZAR, EDITAR, EXCLUIR
 Fiz o DEPLOY da aplicação num servidor da Amazon.
 
 Web:
+
 ACESSE http://52.55.192.194/ para ter acesso a aplicação WEB e já brincar com as Notícias!
 
 API Rest:
