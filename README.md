@@ -11,10 +11,10 @@ Esse APP contempla tanto a parte WEB (LISTAR, CRIAR, VISUALIZAR, EDITAR, EXCLUIR
 
 Fiz o DEPLOY da aplicação num servidor da Amazon.
 
-WEB:
+Web:
 ACESSE http://52.55.192.194/ para ter acesso a aplicação WEB e já brincar com as Notícias!
 
-API RESTFUL:
+API Rest:
 
 ```
 Listar todas as notícias
@@ -78,6 +78,20 @@ Body (application/json)
 }
 ```
 
+
+**COMO RODAR LOCALMENTE? É bem simples!**
+1. Requisitos: PHP7, MySQL, Composer
+2. Crie seu banco de dados! Na pasta config tem o arquivo *schema.sql*, copie, cole no seu MySQLWorkbench e pronto seu banco ta criado.
+3. Dentro da aplicação execute o comando *composer install* para que as dependências possam ser instaladas.
+4. Depois, dentro da pasta da aplicação execute o comando *php yii serve --port=8888*, seu servidor estará rodando!
+5. Basta acessar http://localhost:8888 e sua aplicação estará rodando!
+
+**O que foi utilizado nessa aplicação?**
+1. Framework Yii2 PHP (PHP OO)
+2. Banco de dados Mysql
+3. JavaScript (jQuery, ajax, etc)
+4. Bootstrap, HTML e CSS.
+5. Api Rest
 
 
 
